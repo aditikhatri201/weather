@@ -1,7 +1,7 @@
 const request=require('request')
 const forecast=(latitude,longitude,callback)=>{
     const url='http://api.weatherstack.com/current?access_key=4ebcf2feeb09a827f82011f249f969c2&query='+latitude+','+longitude
-    request({url,json:true},(error,{body}={})=>{
+    request({url,json:true},(error,{body})=>{
         if(error){
             callback('Unable to connect to location services!',undefined)
         }else if(body.error){
